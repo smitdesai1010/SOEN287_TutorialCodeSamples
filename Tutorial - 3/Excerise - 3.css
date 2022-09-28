@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightyellow;
+}
+
+.steps {
+    margin-left: 30px;
+}
+
+#title {
+    color: orange;
+    font-family: Arial, sans-serif;
+}

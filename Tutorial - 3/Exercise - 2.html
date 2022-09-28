@@ -1,10 +1,10 @@
 <html>
     <style>
-        p {
+        .steps {
             margin-left: 30px;
         }
 
-        h1 {
+        #title {
             color: orange;
             font-family: Arial, sans-serif;
         }
@@ -18,7 +18,7 @@
             <li><a href="#subscribe">Subscribe</a></li>
         </ul>
 
-        <h1>Good Old Fashioned Pancakes</h1>
+        <h1 id="title">Good Old Fashioned Pancakes</h1>
         <img src="pancake.jfif" alt="An image of pancake">
 
         <h2 id="ingredients">Ingredients</h2>
@@ -56,13 +56,13 @@
 
         
         <h2 id="steps">Steps</h2>
-        <h4>Step 1</h4>
+        <h4 class="steps">Step 1</h4>
         <p>
             In a large bowl, sift together the flour, the baking powder, salt and sugar. 
             Make a well in the center and pour the milk, egg and melted butter; mix until smooth
         </p>
 
-        <h4>Step 2</h4>
+        <h4 class="steps">Step 2</h4>
         <p>
             Heat a lightly oiled griddle or frying pan over medium-high heat. Pout or scoop paste
             the batter onto the griddle, using approximately 1/4 cup for each pancake. 
@@ -70,7 +70,7 @@
         </p>
 
         <hr>
-        <h4 id="#subscribe">Subscribe</h4>
+        <h4 id="subscribe">Subscribe</h4>
         <form action="">
             <input type="text" placeholder="Enter Email">
             <input type="submit" value="Submit">
