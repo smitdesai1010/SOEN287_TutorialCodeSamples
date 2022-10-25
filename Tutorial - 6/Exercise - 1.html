@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Data</h1>
+    <button onclick="viewStudentData()">Clicke to view student data</button>
+    <div id="data"></div>
+</body>
+<script>
+    let studentData = {
+        'Name': 'Smit Desai',
+        'Age': 22,
+        'Marks': {
+            'Physics': 95,
+            'Chemistry': 95,
+            'Mathematics': 95,
+            'Computer Science': 97,
+            'English': 89
+        },
+    }
+
+    function viewStudentData() {
+        const dataBlock = document.getElementById('data')
+
+        const name = document.createElement('h3')
+        name.innerHTML = studentData.Name
+
+        const age = document.createElement('p')
+        age.innerHTML = studentData.Age
+
+        const list = document.createElement('ul')
+        for (let subject in studentData.Marks) {
+            const listElement = document.createElement('li')
+            listElement.innerHTML = studentData.Marks[subject]
+            list.appendChild(listElement)
+        }
+
+        dataBlock.appendChild(name)
+        dataBlock.appendChild(age)
+        dataBlock.appendChild(list)
+    }
+</script>
+</html>

@@ -6,15 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
 
-    <button onclick="btnPressed()">Click Me</button>
-    
+<style>
+    #btn {
+        background-color: blue;
+        border: 10px solid;
+    }
+</style>
+
+<body>
+    <button id="btn" onclick="btnPressed()">Click Me</button>
 </body>
 
 <script>
     function btnPressed() {
-        alert("You have pressed the button")
+        // alert("You have pressed the button")
+        console.log("Button pressed")
     }
 </script>
 
