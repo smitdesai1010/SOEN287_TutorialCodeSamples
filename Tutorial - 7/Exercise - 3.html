@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>First name:</label>
+    <input type="text" id="firstName"><br><br>
+    <label>Last name:</label>
+    <input type="text" id="lastName"><br><br>
+    <label>Phone:</label>
+    <input type="text" id="phone"><br><br><br>
+    <button id="btn">Save</button>
+</body>
+
+<script>
+    const fistName = document.getElementById("firstName")
+    const lastName = document.getElementById("lastName")
+    const phone = document.getElementById("phone")
+
+    fistName.onkeyup = changeInputColor
+    lastName.onkeyup = changeInputColor
+    
+    phone.addEventListener("click", () => {
+        alert("You should enter a 10 digit phone number")
+    })
+
+    document.getElementById("btn").addEventListener("click", () => {
+        if (firstName.value == '' && lastName.value == '' && phone.value == '') {
+            document.body.style.backgroundColor = 'red'
+        }
+        else {
+            alert("Form submitted successfully")
+        }
+    })
+
+    function changeInputColor(event) {
+        if (event.target.value != '') {
+            event.target.style.backgroundColor = 'green'
+        }
+    }
+</script>
+</html>

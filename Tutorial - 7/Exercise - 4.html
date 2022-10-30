@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="SingleClick">Click me to change my color</button>
+    <button id="DoubleClick">Double click me to change my color</button>
+    <button id="OnlyOnceClick">Click me to change my color, but will change only once</button>
+</body>
+<script>
+    
+    document.getElementById("SingleClick").addEventListener("click", changeToRandomColor)
+    document.getElementById("DoubleClick").addEventListener("dblclick", changeToRandomColor)
+    document.getElementById("OnlyOnceClick").addEventListener("click", removeEventListenerAndChangeToRandomColor)
+
+    function removeEventListenerAndChangeToRandomColor(event) {
+        event.target.removeEventListener("click", removeEventListenerAndChangeToRandomColor)
+        changeToRandomColor(event)
+    }
+
+    function changeToRandomColor(event) {
+        event.target.style.backgroundColor = getRandomColor()
+    }
+
+    function getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+</script>
+</html>
