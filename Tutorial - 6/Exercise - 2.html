@@ -21,10 +21,17 @@
 
     <div id="test-query-all">Use query selector all</div>
     <div id="test-query-all">Use query selector all</div>
+
+    <div style="color: red"></div>
 </body>
 
 <script>
-    //Talk about external js files
+    document.getElementById("testID").style.background = 'red'
+
+    const elements = document.getElementsByClassName('testClass')
+    for (let i = 0; i < elements.length; ++i) {
+        elements[i].style.background = 'blue'
+    }
 </script>
 
 </html>
