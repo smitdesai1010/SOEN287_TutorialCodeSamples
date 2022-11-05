@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="fname">First number:</label>
+    <input type="text" id="firstNumber"><br><br>
+    <label for="lname">Second number:</label>
+    <input type="text" id="secondNumber"><br><br>
+
+    <div>
+        <button id="multiply">Multiply</button>
+        <button id="divide">Divide</button>
+    </div>
+    
+    <br><br>
+
+    <div>
+        The result is: 
+        <p id="result"></p>
+    </div>
+</body>
+
+<script>
+    /* 
+        Need to assign event handler so that the click events are handled properly
+            Use document.getElementById() to select the element
+            Then use .addEventListener("eventName", functionName) to register the event listener
+
+        Create the functions that will be called upon the click i.e funcitons that will handle the logic
+        
+        The function should do the following:
+            Select the input element using the document.getElementById()
+            Store the "value" attribute of the input element in a variable
+            Do the above steps for first number and second number
+
+            Perform the arthicmetic operation on the numbers
+
+            Display the result to the screen
+            Use document.getElementById() to select the p#result element
+            Assign the result to the .innerText attribute of the element
+    */
+
+
+
+   document.getElementById("multiply").addEventListener("click", multiply)
+   document.getElementById("divide").addEventListener("click", divide)
+   
+   function notAValidNumber() {
+        //Implement it
+        //Change background-color if the input number is note valid number
+        //Google to find how to check if a variable is number in JavaScript
+   }
+
+   function multiply() {
+        const numberOne = document.getElementById("firstNumber").value
+        const numberTwo = document.getElementById("secondNumber").value
+
+        const result = numberOne * numberTwo
+
+        document.getElementById("result").innerText = result
+   }
+
+   function divide() {
+        const numberOne = document.getElementById("firstNumber").value
+        const numberTwo = document.getElementById("secondNumber").value
+
+        const result = numberOne / numberTwo
+
+        document.getElementById("result").innerText = result
+   }
+
+</script>
+
+</html>
