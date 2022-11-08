@@ -28,15 +28,16 @@
         const dataBlock = document.getElementById('data')
 
         const name = document.createElement('h3')
-        name.innerHTML = studentData.Name
+        name.innerText = studentData.Name
 
         const age = document.createElement('p')
-        age.innerHTML = studentData.Age
+        age.innerText = studentData.Age
 
         const list = document.createElement('ul')
+
         for (let subject in studentData.Marks) {
             const listElement = document.createElement('li')
-            listElement.innerHTML = studentData.Marks[subject]
+            listElement.innerText = studentData.Marks[subject]
             list.appendChild(listElement)
         }
 

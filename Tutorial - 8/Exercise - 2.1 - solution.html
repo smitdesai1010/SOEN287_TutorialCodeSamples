@@ -14,11 +14,11 @@
     <br>
     <br>
 
-    <button onclick="viewStudentData()">Click to view student data</button>
-    <button onclick="calulateAverage()">Click to calulate Average accross all subjects and all students</button>
-    <button onclick="removeStudentData()">Click to remove student data</button>
-    <button onclick="viewAll()">Click to view all student data</button>
-
+    <button onclick="viewStudentData()">View student data</button>
+    <button onclick="calulateAverage()">Calulate Average accross all subjects and all students</button>
+    <button onclick="removeStudentData()">Remove student data</button>
+    <button onclick="viewAll()">View all student data</button>
+    <button onclick="clearScreen()">Clear Screen</button>
 
     <div id="data"></div>
 </body>
@@ -82,19 +82,51 @@
     }
 
     function viewAll() {
-        //Implement it
+        const inputName = document.getElementById("studentName").value;
+        
+        studentRecords.forEach(studentData => {
+            loadStudentData(studentData);    
+        })
     }
 
     function removeStudentData() {
-        //Implement it
+        const inputName = document.getElementById("studentName").value;
+
+        for (let i = 0; i < studentRecords.length; ++i) {
+            if (inputName == studentRecords[i].Name) {
+                delete studentRecords[i];
+                document.getElementById("data").innerText = 'Record for: ' + inputName + ' deleted'
+                return;
+            }
+        }
+
+        studentNameNotFound()
     }
 
     function studentNameNotFound() {
-       //Implement it
+        alert('Name not found')
     }
 
     function calulateAverage() {
-       //Implement it
+        const inputName = document.getElementById("studentName").value;
+        let total = 0
+        let numOfEntries = 0
+        
+        //Iterate over all students
+        studentRecords.forEach(studentData => {
+
+            //Iterate over marks of a particular student
+            for (let subject in studentData.Marks) {
+             total += parseInt(studentData.Marks[subject])
+                numOfEntries += 1
+            }
+        })
+
+        alert("Average: " + total/numOfEntries)
+    }
+
+    function clearScreen() {
+        document.getElementById('data').innerText = ''
     }
 
     function loadStudentData(studentData) {

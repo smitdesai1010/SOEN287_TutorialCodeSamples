@@ -29,7 +29,8 @@
     /* 
         Need to assign event handler so that the click events are handled properly
             Use document.getElementById() to select the element
-            Then use .addEventListener("eventName", functionName) to register the event listener
+            Then use .addEventListener("eventName", functionName) to register 
+            the event listener
 
         Create the functions that will be called upon the click i.e funcitons that will handle the logic
         
@@ -51,26 +52,32 @@
    document.getElementById("divide").addEventListener("click", divide)
    
    function notAValidNumber() {
-        //Implement it
-        //Change background-color if the input number is note valid number
-        //Google to find how to check if a variable is number in JavaScript
+        document.body.style.backgroundColor = 'red'
    }
 
    function multiply() {
         const numberOne = document.getElementById("firstNumber").value
         const numberTwo = document.getElementById("secondNumber").value
 
-        const result = numberOne * numberTwo
-
-        document.getElementById("result").innerText = result
+        if (Number.isNaN(numberOne) || Number.isNaN(numberTwo)) {
+            notAValidNumber()
+        }
+        else {
+            const result = numberOne * numberTwo
+            document.getElementById("result").innerText = result
+        }
    }
 
    function divide() {
         const numberOne = document.getElementById("firstNumber").value
         const numberTwo = document.getElementById("secondNumber").value
 
-        const result = numberOne / numberTwo
+        if (Number.isNaN(numberOne) || Number.isNaN(numberTwo)) {
+            notAValidNumber()
+            return
+        }
 
+        const result = numberOne / numberTwo
         document.getElementById("result").innerText = result
    }
 
