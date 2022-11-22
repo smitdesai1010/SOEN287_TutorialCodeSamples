@@ -1,5 +1,6 @@
 <?php
-    function averageMarksOfStudent($data, $nameOfStudent) {
+    function averageMarksOfStudent($data, $nameOfStudent) {      
+
         foreach ($data as $name => $marks) {
             if ($name == $nameOfStudent) {
                 
@@ -10,9 +11,12 @@
                     $sum += $mark;
                 }
 
-                return $sum / $count;
+                echo "Average marks: " . $sum / $count;
+                return;
             }
         }   
+
+        echo "Student record not found";
     }
     
 
@@ -21,5 +25,5 @@
                             "John" => [10, 20, 30, 40, 50, 60, 70, 80]);
 
     
-    echo "Average marks: " . averageMarksOfStudent($studentRecords, "John");
+    averageMarksOfStudent($studentRecords, "Johnw");
 ?>
