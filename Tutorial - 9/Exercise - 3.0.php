@@ -14,6 +14,7 @@
             }
         }   
     }
+    
 
     $studentRecords = array("Smit" => [87, 95, 95, 95, 97], 
                             "Daniel" => [100, 65, 0, 99], 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="server.php" method="get">
+        <label>First name:</label>
+        <input type="text" name="firstName"><br>
+
+        <label>Last name:</label>
+        <input type="text" name="lastName"><br>
+
+        <label>Agree to our Terms of Service</label>
+        <input type="checkbox" name="T&C"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    
+</body>
+<script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const registered = urlParams.get('registered');
+
+        if (registered == "yes") {
+            alert("Welcome! You have successfully registered")
+        }
+        else if (registered == "no") {
+            alert("You have not accepted our Terms of Service")
+        }
+</script>
+</html>
