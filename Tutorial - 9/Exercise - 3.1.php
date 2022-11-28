@@ -25,5 +25,5 @@
     
     $my_marks = $studentRecords["Smit"];
 
-    averageMarksOfStudent($studentRecords, "sdfsd");
+    averageMarksOfStudent($studentRecords, "John");
 ?>
