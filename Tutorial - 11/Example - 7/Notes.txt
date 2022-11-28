@@ -1,0 +1,21 @@
+You need to have the following created:
+
+- A env.php file:
+
+    <?php
+        putenv("servername=value");
+        putenv("username=value");
+        putenv("password=value");
+    ?>
+Replace the value with the respective field value
+
+
+- A Database called "studentRecords"
+
+- A table called "Marks" with the following schema:
+    "CREATE TABLE Marks (
+        student_name VARCHAR(30) NOT NULL,
+        math_marks INT,
+        computer_marks INT,
+        science_marks INT
+    )"
