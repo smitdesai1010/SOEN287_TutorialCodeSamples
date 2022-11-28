@@ -1,0 +1,6 @@
+- Download "php_mysqli.dll" from the web: https://www.dll-files.com/php_mysqli.dll.html 
+- Extract it in the "./ext/" folder present in the root php folder
+- Create a file "php.ini" in the root php folder
+- Copy the contents of "php.ini-development" to "php.ini"
+- Uncomment the following line "extension=mysqli"
+- Replace the value with the path of the downloaded "php_mysqli.dll" file
