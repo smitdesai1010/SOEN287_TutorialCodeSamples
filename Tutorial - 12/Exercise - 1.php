@@ -50,14 +50,18 @@
             $studentName = str_replace(' ', '', $studentName);
             
             if ($_GET["optionSelected"] == "setCookie") {
+                setcookie($studentName, $studentAge, time() + 3600);
+                echo "<h4 class='mx-5'>Cookie set successfully</h4>";
             }
 
             else if ($_GET["optionSelected"] == "cookieExists") {
-    
+                $cookieExists = isset($_COOKIE[$studentName]) == 1 ? "True" : "False";
+                echo "<h4 class='mx-5'>Cookie exists => $studentName : $_COOKIE[$studentName]</h4>";
             }
 
             else {
-     
+                setcookie($studentName, "", time() - 10);
+                echo "<h4 class='mx-5'>Cookie removed successfully</h4>";
             }
         }
 ?>

@@ -14,6 +14,8 @@
     $username = getenv("userName");
     $password = getenv("password");
 
+    print_r(phpinfo());
+
     // Create connection
     $conn = mysqli_connect($servername, $username, $password);
 
